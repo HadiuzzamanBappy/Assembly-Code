@@ -6,7 +6,7 @@ Code type: All program are coded in raw format that means i have not used any li
 
 Used Compiler : emu8086 (software are added in this git)
 
-Course Teacher : 
+Course Teacher : Lecturer Sarfaraz Newaz Sir.
 
 Included file :
 	## Uva C code to Assembly raw code.
