@@ -1,0 +1,24 @@
+< THE SYMBOL TABLE >  lab 1 4 input.com  --  emu8086 assembler version: 4.08 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+CODE                     	00100     	-1        	LABEL     	(NOSEG)   
+MAIN                     	00100     	-1        	NEAR      	(NOSEG)   
+AGAIN                    	00100     	-1        	LABEL     	(NOSEG)   
+PROC1                    	0013A     	-1        	LABEL     	(NOSEG)   
+EX1                      	00140     	-1        	LABEL     	(NOSEG)   
+COM1                     	00142     	-1        	LABEL     	(NOSEG)   
+EX2                      	00148     	-1        	LABEL     	(NOSEG)   
+COM2                     	0014A     	-1        	LABEL     	(NOSEG)   
+EX3                      	00150     	-1        	LABEL     	(NOSEG)   
+SCND                     	00152     	-1        	LABEL     	(NOSEG)   
+EX11                     	00158     	-1        	LABEL     	(NOSEG)   
+COM11                    	0015A     	-1        	LABEL     	(NOSEG)   
+EX22                     	00160     	-1        	LABEL     	(NOSEG)   
+THRD                     	00162     	-1        	LABEL     	(NOSEG)   
+EX111                    	00168     	-1        	LABEL     	(NOSEG)   
+PRINT                    	0016A     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 8/9/2017  --  3:32:43 PM ] 
+< END >
+ 

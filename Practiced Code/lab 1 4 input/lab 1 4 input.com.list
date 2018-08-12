@@ -1,0 +1,152 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+lab 1 4 input.com -- emu8086 assembler version: 4.08  
+ 
+[ 8/9/2017  --  3:32:43 PM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       org 100h
+[   2]        :                                       .model small
+[   3]        :                                       .stack 100h
+[   4]    0100:                                       .code
+[   5]    0100:                                       main proc
+[   6]        :                                       
+[   7]    0100:                                       again:
+[   8]        :                                       
+[   9]    0100: B4 02                                 mov ah,2
+[  10]    0102: B2 3A                                 mov dl,":"
+[  11]    0104: CD 21                                 int 21h
+[  12]        :                                       ;geting frst input
+[  13]    0106: B4 01                                 mov ah,1
+[  14]    0108: CD 21                                 int 21h
+[  15]    010A: 8A D8                                 mov bl,al
+[  16]        :                                       
+[  17]    010C: B4 02                                 mov ah,2
+[  18]    010E: B2 3A                                 mov dl,":"
+[  19]    0110: CD 21                                 int 21h
+[  20]        :                                       ;getting scnd input
+[  21]    0112: B4 01                                 mov ah,1
+[  22]    0114: CD 21                                 int 21h
+[  23]    0116: 8A F8                                 mov bh,al
+[  24]        :                                       
+[  25]    0118: B4 02                                 mov ah,2
+[  26]    011A: B2 3A                                 mov dl,":"
+[  27]    011C: CD 21                                 int 21h
+[  28]        :                                       ;getting third input
+[  29]    011E: B4 01                                 mov ah,1
+[  30]    0120: CD 21                                 int 21h
+[  31]    0122: 8A C8                                 mov cl,al
+[  32]        :                                       
+[  33]    0124: B4 02                                 mov ah,2
+[  34]    0126: B2 3A                                 mov dl,":"
+[  35]    0128: CD 21                                 int 21h
+[  36]        :                                       ;getting fourth input
+[  37]    012A: B4 01                                 mov ah,1
+[  38]    012C: CD 21                                 int 21h
+[  39]    012E: 8A E8                                 mov ch,al
+[  40]        :                                       ;printing a new line
+[  41]    0130: B4 02                                 mov ah,2
+[  42]    0132: B2 0A                                 mov dl,10
+[  43]    0134: CD 21                                 int 21h
+[  44]    0136: B2 0D                                 mov dl,13
+[  45]    0138: CD 21                                 int 21h
+[  46]        :                                       
+[  47]    013A:                                       proc1:
+[  48]    013A: 3A DF                                 cmp bl,bh
+[  49]    013C: 7D 02                                 jge ex1     ;checking if(bl>bh) then jump ex1
+[  50]    013E: EB 02                                 jmp com1    ;else skip to the compare com1
+[  51]        :                                       
+[  52]    0140:                                       ex1:
+[  53]    0140: 86 DF                                 xchg bl,bh  ;exchanging bl and bh
+[  54]        :                                       
+[  55]    0142:                                       com1:
+[  56]    0142: 3A F9                                 cmp bh,cl
+[  57]    0144: 7D 02                                 jge ex2     ;checking if(bh>cl) then jump ex2
+[  58]    0146: EB 02                                 jmp com2    ;else skip to the compare com2
+[  59]        :                                       
+[  60]    0148:                                       ex2:
+[  61]    0148: 86 F9                                 xchg bh,cl   ;exchanging cl and bh
+[  62]        :                                       
+[  63]    014A:                                       com2:
+[  64]    014A: 3A CD                                 cmp cl,ch
+[  65]    014C: 7D 02                                 jge ex3     ;checking if(cl>ch) then jump ex3
+[  66]    014E: EB 02                                 jmp scnd    ;else skip to the second step scnd
+[  67]        :                                       
+[  68]    0150:                                       ex3:
+[  69]    0150: 86 CD                                 xchg cl,ch   ;exchanging cl and ch
+[  70]        :                                       
+[  71]    0152:                                       scnd:
+[  72]    0152: 3A DF                                 cmp bl,bh
+[  73]    0154: 7D 02                                 jge ex11     ;checking if(bl>bh) then jump ex11
+[  74]    0156: EB 02                                 jmp com11    ;else skip to the compare com11
+[  75]        :                                       
+[  76]    0158:                                       ex11:
+[  77]    0158: 86 DF                                 xchg bl,bh  ;exchanging bl and bh
+[  78]        :                                       
+[  79]    015A:                                       com11:
+[  80]    015A: 3A F9                                 cmp bh,cl
+[  81]    015C: 7D 02                                 jge ex22     ;checking if(bh>cl) then jump ex22
+[  82]    015E: EB 02                                 jmp thrd    ;else skip to the step thrd
+[  83]        :                                       
+[  84]    0160:                                       ex22:
+[  85]    0160: 86 F9                                 xchg bh,cl   ;exchanging cl and bh
+[  86]        :                                       
+[  87]    0162:                                       thrd:
+[  88]    0162: 3A DF                                 cmp bl,bh
+[  89]    0164: 7D 02                                 jge ex111     ;checking if(bl>bh) then jump ex111
+[  90]    0166: EB 02                                 jmp print    ;else skip to the print
+[  91]        :                                       
+[  92]    0168:                                       ex111:
+[  93]    0168: 86 DF                                 xchg bl,bh  ;exchanging bl and bh
+[  94]        :                                       
+[  95]    016A:                                       print:
+[  96]    016A: B4 02                                 mov ah,2
+[  97]        :                                       
+[  98]    016C: 8A D3                                 mov dl,bl
+[  99]    016E: CD 21                                 int 21h
+[ 100]    0170: 8A D7                                 mov dl,bh
+[ 101]    0172: CD 21                                 int 21h
+[ 102]    0174: 8A D1                                 mov dl,cl
+[ 103]    0176: CD 21                                 int 21h
+[ 104]    0178: 8A D5                                 mov dl,ch
+[ 105]    017A: CD 21                                 int 21h
+[ 106]        :                                       
+[ 107]    017C: B2 0A                                 mov dl,10
+[ 108]    017E: CD 21                                 int 21h
+[ 109]    0180: B2 0D                                 mov dl,13
+[ 110]    0182: CD 21                                 int 21h
+[ 111]        :                                       
+[ 112]    0184: 8A D5                                 mov dl,ch
+[ 113]    0186: CD 21                                 int 21h
+[ 114]    0188: 8A D1                                 mov dl,cl
+[ 115]    018A: CD 21                                 int 21h
+[ 116]    018C: 8A D7                                 mov dl,bh
+[ 117]    018E: CD 21                                 int 21h
+[ 118]    0190: 8A D3                                 mov dl,bl
+[ 119]    0192: CD 21                                 int 21h
+[ 120]        :                                       
+[ 121]    0194: B2 0A                                 mov dl,10
+[ 122]    0196: CD 21                                 int 21h
+[ 123]    0198: B2 0D                                 mov dl,13
+[ 124]    019A: CD 21                                 int 21h
+[ 125]    019C: E9 61 FF                              jmp again
+[ 126]        :                                       
+[ 127]    019F: B4 4C                                 mov ah,4ch
+[ 128]    01A1: CD 21                                 int 21h
+[ 129]        :                                       
+[ 130]        :                                       main endp
+[ 131]        :                                       end main
+[ 132]        :                                       
+[ 133]        :                                       
+[ 134]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
